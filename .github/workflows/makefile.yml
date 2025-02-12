@@ -51,8 +51,7 @@ jobs:
     - name: 配置 ksu
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
-        rm -rf KernelSU
-        curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
+        curl -LSs "https://raw.githubusercontent.com/rsuntk/KernelSU/main/kernel/setup.sh" | bash -s main
 
                
     - name: 设置ccache缓存
