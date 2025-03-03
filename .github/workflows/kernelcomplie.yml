@@ -1,4 +1,4 @@
-name: 编译内核
+name: 编译内核_无KSU
 
 on:
   workflow_dispatch:
