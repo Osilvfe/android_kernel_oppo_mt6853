@@ -1,0 +1,5 @@
+9a150a95fae7b2472c7ca127b8df42f6  boot/boot.img-4.14.186-vendor-pecm30
+b7ea8ba820d2d3c42851579d280f3dcd  boot/recovery.img-4.14.186-vendor-pecm30
+2e9074f503f24af4dddff587b5fc6f79  boot/vbmeta.img-4.14.186-vendor-pecm30
+fe4401ae7a20d61571caefe01b74be86  lib/flash-bootimage/4.14.186-vendor-pecm30.conf
+830fa5a9ee2485f785f9c9236235a0b4  usr/share/doc/linux-bootimage-4.14.186-vendor-pecm30/changelog.gz

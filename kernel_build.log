@@ -1,0 +1,20 @@
+I: Building changelog from git history
+I: Resulting version is 0.0.0+git20250303124017.0322de2.droidian
+I: Refreshing APT database
+Hit:1 http://releases.droidian.org/snapshots/100 rolling InRelease
+Hit:2 https://snapshot.debian.org/archive/debian/20241104T150945Z sid InRelease
+Reading package lists...
+I: Installing build dependencies
+dpkg-buildpackage: info: source package linux-android-vendor-device1-build-deps
+dpkg-buildpackage: info: source version 0.0.0+git20250303124017.0322de2.droidian
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Equivs Dummy Package Generator <root@0088bc2d4088>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean
+   dh_clean
+ debian/rules binary
+dh binary
+   dh_update_autotools_config
+   dh_autoreconf

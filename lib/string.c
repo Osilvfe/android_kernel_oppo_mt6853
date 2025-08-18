@@ -1064,6 +1064,27 @@ char *strreplace(char *s, char old, char new)
 			*s = new;
 	return s;
 }
+#ifndef __HAVE_ARCH_STPCPY
+/**
+ * stpcpy - Copy a %NUL terminated string
+ * @dest: Where to copy the string to
+ * @src: Where to copy the string from
+ *
+ * This function copies the string pointed to by @src (including the
+ * terminating %NUL character) to the buffer pointed to by @dest.
+ * The strings may not overlap.
+ *
+ * Returns a pointer to the %NUL at the end of @dest.
+ */
+char *stpcpy(char *dest, const char *src) {
+    char *ret = dest;
+    while (*src != '\0') {
+        *dest++ = *src++;
+    }
+    return ret;
+}
+EXPORT_SYMBOL(stpcpy);
+#endif
 EXPORT_SYMBOL(strreplace);
 
 void fortify_panic(const char *name)

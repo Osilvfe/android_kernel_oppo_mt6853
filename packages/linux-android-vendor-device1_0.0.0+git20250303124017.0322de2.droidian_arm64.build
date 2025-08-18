@@ -1,0 +1,862 @@
+ dpkg-buildpackage -d -us -uc -ui -sa --jobs=16 --build=any --build=any -aarm64
+dpkg-buildpackage: info: source package linux-android-vendor-device1
+dpkg-buildpackage: info: source version 0.0.0+git20250303124017.0322de2.droidian
+dpkg-buildpackage: info: source distribution trixie
+dpkg-buildpackage: info: source changed by Osilvfe <3072756864@qq.com>
+dpkg-architecture: warning: specified GNU system type aarch64-linux-gnu does not match CC system type x86_64-linux-gnu, try setting a correct CC environment variable
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture arm64
+ debian/rules clean
+dh clean
+dh: warning: Use of debian/compat is deprecated and will be removed in debhelper (>= 14~).
+dh: warning: Running tests during cross-builds is not supported in the general case (except for special cases or by
+dh: warning: using emulation)
+dh: warning: If the build fails, please consider rebuilding with DEB_BUILD_OPTIONS=nocheck.
+dh: warning: Additionally, you might have to set the "cross" profile.  For dpkg-buildpackage, you do this by
+dh: warning: passing the -Pcross option. Check the documentation of your build tool for how to set
+dh: warning: DEB_BUILD_PROFILES if you use another build tool that does not auto-configure cross-building for you
+dh: warning: If you have setup the relevant support for running cross-compiled binaries and want to silence this
+dh: warning: warning, please use DEB_BUILD_OPTIONS=crossbuildcanrunhostbinaries
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/buildd/sources'
+rm -rf /buildd/sources/out
+rm -rf debian/path-override
+rm -rf include/config/
+rm -f debian/linux-*.postinst
+dh_clean
+dh_clean: warning: Use of debian/compat is deprecated and will be removed in debhelper (>= 14~).
+make[1]: Leaving directory '/buildd/sources'
+   dh_clean
+dh_clean: warning: Use of debian/compat is deprecated and will be removed in debhelper (>= 14~).
+ debian/rules build-arch
+dh build-arch
+dh: warning: Use of debian/compat is deprecated and will be removed in debhelper (>= 14~).
+dh: warning: Running tests during cross-builds is not supported in the general case (except for special cases or by
+dh: warning: using emulation)
+dh: warning: If the build fails, please consider rebuilding with DEB_BUILD_OPTIONS=nocheck.
+dh: warning: Additionally, you might have to set the "cross" profile.  For dpkg-buildpackage, you do this by
+dh: warning: passing the -Pcross option. Check the documentation of your build tool for how to set
+dh: warning: DEB_BUILD_PROFILES if you use another build tool that does not auto-configure cross-building for you
+dh: warning: If you have setup the relevant support for running cross-compiled binaries and want to silence this
+dh: warning: warning, please use DEB_BUILD_OPTIONS=crossbuildcanrunhostbinaries
+   dh_update_autotools_config -a
+   dh_autoreconf -a
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/buildd/sources'
+mkdir -p debian/path-override
+ln -sf /opt/android/prebuilts/python/2.7.5/bin/python debian/path-override/python
+ln -sf /opt/android/prebuilts/python/2.7.5/bin/python2 debian/path-override/python2
+ln -sf /opt/android/prebuilts/python/2.7.5/bin/python2.7 debian/path-override/python2.7
+PATH=/usr/lib/llvm-android-12.0-r416183b/bin:/buildd/sources/debian/path-override:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11 LDFLAGS="" CFLAGS="" HOSTLDFLAGS="-fuse-ld=lld --rtlib=compiler-rt" /usr/bin/make -C /buildd/sources KERNELRELEASE=4.14.186-vendor-device1 ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- CROSS_COMPILE_ARM32=aarch64-linux-android- CLANG_TRIPLE=aarch64-linux-gnu- -j16 LLVM=1 LLVM_IAS=1 O=/buildd/sources/out/KERNEL_OBJ CC=clang defconfig KBUILD_DEFCONFIG=mt6853_defconfig
+make[2]: Entering directory '/buildd/sources'
+make[3]: Entering directory '/buildd/sources/out/KERNEL_OBJ'
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HANS_FREEZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AOD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENABLE_MODEM_DB
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENGINEERTOOLS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HEALTHINFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TASK_CPUSTATS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FACERECOGNITION
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FASTBOOT_UNLOCK_VERIFY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FG_IO_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHED_ASSIST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARD_INFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPECIALOPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_UFSPLUS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIPICLKCHANGE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_FREEAREA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_KSWAPD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_NFC_CONSOFT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ONSCREENFINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_OSC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PHOENIX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AGINGTEST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PROCESS_RECLAIM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_RESET_ROLLBACK_INDEX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SELINUX_CONTROL_LOG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_ALGORITHM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_SMEM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_WISELIGHT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IOMONITOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPEAKER_MUTE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MM_FEEDBACK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TP_BSPFWUPDATE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CHG_BASIC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_VIRTUAL_RESERVE_MEMORY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MEMLEAK_DETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_MTUDETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_RUSUPGRADE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SLA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DATA_EVAL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SMART_BW
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IPV6_OPTIMIZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ZRAM_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_EXFAT_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARDFS_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_COMPATIBILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIDAS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_STABILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_INJECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_EXTENDS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_LOWMEM_DBG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PERFORMANCE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MTK_ION_SEPARATE_LOCK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ALARMINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_RPMH
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_FTM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHEDUTIL_USE_TL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CORE_CTL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CAMERA_COMMON
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_OPLUSWFD
+  GEN     ./Makefile
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/kconfig/conf.o
+  HOSTCC  scripts/kconfig/zconf.tab.o
+In file included from /buildd/sources/scripts/kconfig/zconf.tab.c:2470:
+In function 'dep_stack_insert',
+    inlined from 'sym_check_print_recursive' at /buildd/sources/scripts/kconfig/symbol.c:1123:3,
+    inlined from 'sym_check_deps' at /buildd/sources/scripts/kconfig/symbol.c:1300:3:
+/buildd/sources/scripts/kconfig/symbol.c:1099:19: warning: storing the address of local variable 'cv_stack' in 'check_top' [-Wdangling-pointer=]
+ 1099 |         check_top = stack;
+      |         ~~~~~~~~~~^~~~~~~
+/buildd/sources/scripts/kconfig/symbol.c: In function 'sym_check_deps':
+/buildd/sources/scripts/kconfig/symbol.c:1120:26: note: 'cv_stack' declared here
+ 1120 |         struct dep_stack cv_stack;
+      |                          ^~~~~~~~
+/buildd/sources/scripts/kconfig/symbol.c:1090:4: note: 'check_top' declared here
+ 1090 | } *check_top;
+      |    ^~~~~~~~~
+  HOSTLD  scripts/kconfig/conf
+*** Default configuration is based on 'mt6853_defconfig'
+drivers/nfc/st21nfc-i2c/Kconfig:1:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:2:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:3:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:4:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:5:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:6:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensors-1.0/Kconfig:22:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensors-1.0/oplus_virtual_sensor/sensors/pedo_minutehub/Kconfig:2:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensors-1.0/oplus_virtual_sensor/sensors/pedo_minutehub/Kconfig:3:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensor/2.0/Kconfig:11:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensor/2.0/oplus_virtual_sensor/sensors/pedo_minutehub/Kconfig:2:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensor/2.0/oplus_virtual_sensor/sensors/pedo_minutehub/Kconfig:3:warning: ignoring unsupported character ''
+drivers/misc/aw8697_haptic/Kconfig:1:warning: ignoring unsupported character ''
+drivers/misc/aw8697_haptic/Kconfig:2:warning: ignoring unsupported character ''
+drivers/misc/aw8697_haptic/Kconfig:3:warning: ignoring unsupported character ''
+drivers/misc/aw8697_haptic/Kconfig:4:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/Kconfig:203:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/goodix_berlin_driver/Kconfig:5:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/goodix_berlin_driver/Kconfig:6:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/goodix_berlin_driver/Kconfig:7:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/goodix_berlin_driver/Kconfig:8:warning: ignoring unsupported character ''
+drivers/power/supply/mediatek/charger/Kconfig:207:warning: ignoring type redefinition of 'CHARGER_BQ25890' from 'tristate' to 'boolean'
+sound/soc/codecs/audio/dbmdx/Kconfig:10:warning: ignoring type redefinition of 'SND_SOC_DBMDX' from 'boolean' to 'tristate'
+drivers/soc/oplus/system/Kconfig:24:warning: prompt redefined
+drivers/soc/oplus/system/Kconfig:22:warning: ignoring type redefinition of 'OPPO_DEVICE_IFNO' from 'boolean' to 'tristate'
+drivers/soc/oplus/system/oplus_pmic_monitor_mtk/Kconfig:4:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_pmic_monitor_mtk/Kconfig:5:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_pmic_monitor_mtk/Kconfig:6:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_pmic_monitor_mtk/Kconfig:7:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_saupwk/Kconfig:4:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_saupwk/Kconfig:5:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_saupwk/Kconfig:6:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_saupwk/Kconfig:7:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:3:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:4:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:5:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:6:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:6:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:9:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:10:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:11:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:12:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:12:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:15:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:16:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:17:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:18:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:18:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:21:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:22:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:23:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:24:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:24:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:27:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:28:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:29:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:30:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:30:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:33:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:34:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:35:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:36:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:36:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:39:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:40:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:41:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:42:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:45:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:46:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:47:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:48:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/rt_info/Kconfig:1:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/rt_info/Kconfig:2:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/rt_info/Kconfig:3:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/rt_info/Kconfig:4:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:1:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:2:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:3:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:4:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:5:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:6:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:1:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:2:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:3:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:4:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:5:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:6:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/hxchipset_hx83102p/Kconfig:19:warning: choice value used outside its choice group
+drivers/input/touchscreen/mediatek/hxchipset_hx83102p/Kconfig:28:warning: choice value used outside its choice group
+arch/arm64/configs/mt6853_defconfig:1402:warning: override: reassigning to symbol DEVTMPFS
+arch/arm64/configs/mt6853_defconfig:2981:warning: override: reassigning to symbol VT
+arch/arm64/configs/mt6853_defconfig:6381:warning: override: reassigning to symbol TMPFS_POSIX_ACL
+#
+# configuration written to .config
+#
+make[3]: Leaving directory '/buildd/sources/out/KERNEL_OBJ'
+make[2]: Leaving directory '/buildd/sources'
+dh override_dh_auto_configure
+make[1]: Leaving directory '/buildd/sources'
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/buildd/sources'
+mkdir -p debian/path-override
+ln -sf /opt/android/prebuilts/python/2.7.5/bin/python debian/path-override/python
+ln -sf /opt/android/prebuilts/python/2.7.5/bin/python2 debian/path-override/python2
+ln -sf /opt/android/prebuilts/python/2.7.5/bin/python2.7 debian/path-override/python2.7
+PATH=/usr/lib/llvm-android-12.0-r416183b/bin:/buildd/sources/debian/path-override:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11 LDFLAGS="" CFLAGS="" HOSTLDFLAGS="-fuse-ld=lld --rtlib=compiler-rt" /usr/bin/make -C /buildd/sources KERNELRELEASE=4.14.186-vendor-device1 ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- CROSS_COMPILE_ARM32=aarch64-linux-android- CLANG_TRIPLE=aarch64-linux-gnu- -j16 LLVM=1 LLVM_IAS=1 O=/buildd/sources/out/KERNEL_OBJ CC=clang defconfig KBUILD_DEFCONFIG=mt6853_defconfig
+make[2]: Entering directory '/buildd/sources'
+make[3]: Entering directory '/buildd/sources/out/KERNEL_OBJ'
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HANS_FREEZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AOD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENABLE_MODEM_DB
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENGINEERTOOLS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HEALTHINFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TASK_CPUSTATS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FACERECOGNITION
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FASTBOOT_UNLOCK_VERIFY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FG_IO_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHED_ASSIST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARD_INFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPECIALOPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_UFSPLUS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIPICLKCHANGE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_FREEAREA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_KSWAPD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_NFC_CONSOFT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ONSCREENFINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_OSC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PHOENIX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AGINGTEST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PROCESS_RECLAIM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_RESET_ROLLBACK_INDEX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SELINUX_CONTROL_LOG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_ALGORITHM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_SMEM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_WISELIGHT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IOMONITOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPEAKER_MUTE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MM_FEEDBACK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TP_BSPFWUPDATE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CHG_BASIC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_VIRTUAL_RESERVE_MEMORY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MEMLEAK_DETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_MTUDETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_RUSUPGRADE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SLA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DATA_EVAL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SMART_BW
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IPV6_OPTIMIZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ZRAM_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_EXFAT_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARDFS_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_COMPATIBILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIDAS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_STABILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_INJECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_EXTENDS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_LOWMEM_DBG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PERFORMANCE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MTK_ION_SEPARATE_LOCK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ALARMINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_RPMH
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_FTM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHEDUTIL_USE_TL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CORE_CTL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CAMERA_COMMON
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_OPLUSWFD
+  GEN     ./Makefile
+*** Default configuration is based on 'mt6853_defconfig'
+drivers/nfc/st21nfc-i2c/Kconfig:1:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:2:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:3:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:4:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:5:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:6:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensors-1.0/Kconfig:22:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensors-1.0/oplus_virtual_sensor/sensors/pedo_minutehub/Kconfig:2:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensors-1.0/oplus_virtual_sensor/sensors/pedo_minutehub/Kconfig:3:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensor/2.0/Kconfig:11:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensor/2.0/oplus_virtual_sensor/sensors/pedo_minutehub/Kconfig:2:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensor/2.0/oplus_virtual_sensor/sensors/pedo_minutehub/Kconfig:3:warning: ignoring unsupported character ''
+drivers/misc/aw8697_haptic/Kconfig:1:warning: ignoring unsupported character ''
+drivers/misc/aw8697_haptic/Kconfig:2:warning: ignoring unsupported character ''
+drivers/misc/aw8697_haptic/Kconfig:3:warning: ignoring unsupported character ''
+drivers/misc/aw8697_haptic/Kconfig:4:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/Kconfig:203:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/goodix_berlin_driver/Kconfig:5:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/goodix_berlin_driver/Kconfig:6:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/goodix_berlin_driver/Kconfig:7:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/goodix_berlin_driver/Kconfig:8:warning: ignoring unsupported character ''
+drivers/power/supply/mediatek/charger/Kconfig:207:warning: ignoring type redefinition of 'CHARGER_BQ25890' from 'tristate' to 'boolean'
+sound/soc/codecs/audio/dbmdx/Kconfig:10:warning: ignoring type redefinition of 'SND_SOC_DBMDX' from 'boolean' to 'tristate'
+drivers/soc/oplus/system/Kconfig:24:warning: prompt redefined
+drivers/soc/oplus/system/Kconfig:22:warning: ignoring type redefinition of 'OPPO_DEVICE_IFNO' from 'boolean' to 'tristate'
+drivers/soc/oplus/system/oplus_pmic_monitor_mtk/Kconfig:4:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_pmic_monitor_mtk/Kconfig:5:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_pmic_monitor_mtk/Kconfig:6:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_pmic_monitor_mtk/Kconfig:7:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_saupwk/Kconfig:4:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_saupwk/Kconfig:5:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_saupwk/Kconfig:6:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_saupwk/Kconfig:7:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:3:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:4:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:5:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:6:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:6:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:9:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:10:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:11:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:12:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:12:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:15:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:16:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:17:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:18:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:18:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:21:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:22:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:23:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:24:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:24:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:27:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:28:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:29:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:30:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:30:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:33:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:34:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:35:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:36:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:36:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:39:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:40:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:41:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:42:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:45:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:46:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:47:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:48:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/rt_info/Kconfig:1:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/rt_info/Kconfig:2:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/rt_info/Kconfig:3:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/rt_info/Kconfig:4:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:1:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:2:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:3:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:4:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:5:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:6:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:1:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:2:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:3:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:4:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:5:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:6:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/hxchipset_hx83102p/Kconfig:19:warning: choice value used outside its choice group
+drivers/input/touchscreen/mediatek/hxchipset_hx83102p/Kconfig:28:warning: choice value used outside its choice group
+arch/arm64/configs/mt6853_defconfig:1402:warning: override: reassigning to symbol DEVTMPFS
+arch/arm64/configs/mt6853_defconfig:2981:warning: override: reassigning to symbol VT
+arch/arm64/configs/mt6853_defconfig:6381:warning: override: reassigning to symbol TMPFS_POSIX_ACL
+#
+# configuration written to .config
+#
+make[3]: Leaving directory '/buildd/sources/out/KERNEL_OBJ'
+make[2]: Leaving directory '/buildd/sources'
+PATH=/usr/lib/llvm-android-12.0-r416183b/bin:/buildd/sources/debian/path-override:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11 LDFLAGS="" CFLAGS="" HOSTLDFLAGS="-fuse-ld=lld --rtlib=compiler-rt" /usr/bin/make -C /buildd/sources KERNELRELEASE=4.14.186-vendor-device1 ARCH=arm64 CROSS_COMPILE=aarch64-linux-android- CROSS_COMPILE_ARM32=aarch64-linux-android- CLANG_TRIPLE=aarch64-linux-gnu- -j16 LLVM=1 LLVM_IAS=1 O=/buildd/sources/out/KERNEL_OBJ CC=clang Image.gz
+make[2]: Entering directory '/buildd/sources'
+make[3]: Entering directory '/buildd/sources/out/KERNEL_OBJ'
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HANS_FREEZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AOD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENABLE_MODEM_DB
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENGINEERTOOLS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HEALTHINFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TASK_CPUSTATS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FACERECOGNITION
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FASTBOOT_UNLOCK_VERIFY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FG_IO_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHED_ASSIST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARD_INFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPECIALOPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_UFSPLUS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIPICLKCHANGE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_FREEAREA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_KSWAPD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_NFC_CONSOFT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ONSCREENFINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_OSC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PHOENIX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AGINGTEST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PROCESS_RECLAIM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_RESET_ROLLBACK_INDEX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SELINUX_CONTROL_LOG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_ALGORITHM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_SMEM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_WISELIGHT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IOMONITOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPEAKER_MUTE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MM_FEEDBACK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TP_BSPFWUPDATE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CHG_BASIC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_VIRTUAL_RESERVE_MEMORY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MEMLEAK_DETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_MTUDETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_RUSUPGRADE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SLA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DATA_EVAL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SMART_BW
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IPV6_OPTIMIZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ZRAM_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_EXFAT_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARDFS_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_COMPATIBILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIDAS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_STABILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_INJECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_EXTENDS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_LOWMEM_DBG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PERFORMANCE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MTK_ION_SEPARATE_LOCK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ALARMINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_RPMH
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_FTM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHEDUTIL_USE_TL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CORE_CTL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CAMERA_COMMON
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_OPLUSWFD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HANS_FREEZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AOD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENABLE_MODEM_DB
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENGINEERTOOLS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HEALTHINFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TASK_CPUSTATS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FACERECOGNITION
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FASTBOOT_UNLOCK_VERIFY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FG_IO_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHED_ASSIST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARD_INFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPECIALOPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_UFSPLUS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIPICLKCHANGE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_FREEAREA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_KSWAPD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_NFC_CONSOFT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ONSCREENFINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_OSC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PHOENIX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AGINGTEST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PROCESS_RECLAIM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_RESET_ROLLBACK_INDEX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SELINUX_CONTROL_LOG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_ALGORITHM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_SMEM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_WISELIGHT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IOMONITOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPEAKER_MUTE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MM_FEEDBACK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TP_BSPFWUPDATE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CHG_BASIC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_VIRTUAL_RESERVE_MEMORY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MEMLEAK_DETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_MTUDETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_RUSUPGRADE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SLA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DATA_EVAL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SMART_BW
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IPV6_OPTIMIZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ZRAM_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_EXFAT_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARDFS_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_COMPATIBILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIDAS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_STABILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_INJECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_EXTENDS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_LOWMEM_DBG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PERFORMANCE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MTK_ION_SEPARATE_LOCK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ALARMINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_RPMH
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_FTM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHEDUTIL_USE_TL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CORE_CTL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CAMERA_COMMON
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_OPLUSWFD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HANS_FREEZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AOD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENABLE_MODEM_DB
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENGINEERTOOLS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HEALTHINFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TASK_CPUSTATS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FACERECOGNITION
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FASTBOOT_UNLOCK_VERIFY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FG_IO_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHED_ASSIST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARD_INFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPECIALOPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_UFSPLUS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIPICLKCHANGE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_FREEAREA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_KSWAPD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_NFC_CONSOFT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ONSCREENFINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_OSC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PHOENIX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AGINGTEST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PROCESS_RECLAIM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_RESET_ROLLBACK_INDEX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SELINUX_CONTROL_LOG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_ALGORITHM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_SMEM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_WISELIGHT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IOMONITOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPEAKER_MUTE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MM_FEEDBACK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TP_BSPFWUPDATE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CHG_BASIC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_VIRTUAL_RESERVE_MEMORY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MEMLEAK_DETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_MTUDETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_RUSUPGRADE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SLA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DATA_EVAL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SMART_BW
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IPV6_OPTIMIZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ZRAM_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_EXFAT_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARDFS_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_COMPATIBILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIDAS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_STABILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_INJECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_EXTENDS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_LOWMEM_DBG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PERFORMANCE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MTK_ION_SEPARATE_LOCK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ALARMINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_RPMH
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_FTM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHEDUTIL_USE_TL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CORE_CTL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CAMERA_COMMON
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_OPLUSWFD
+  GEN     ./Makefile
+scripts/kconfig/conf  --silentoldconfig Kconfig
+drivers/nfc/st21nfc-i2c/Kconfig:1:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:2:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:3:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:4:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:5:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:6:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensors-1.0/Kconfig:22:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensors-1.0/oplus_virtual_sensor/sensors/pedo_minutehub/Kconfig:2:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensors-1.0/oplus_virtual_sensor/sensors/pedo_minutehub/Kconfig:3:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensor/2.0/Kconfig:11:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensor/2.0/oplus_virtual_sensor/sensors/pedo_minutehub/Kconfig:2:warning: ignoring unsupported character ''
+drivers/misc/mediatek/sensor/2.0/oplus_virtual_sensor/sensors/pedo_minutehub/Kconfig:3:warning: ignoring unsupported character ''
+drivers/misc/aw8697_haptic/Kconfig:1:warning: ignoring unsupported character ''
+drivers/misc/aw8697_haptic/Kconfig:2:warning: ignoring unsupported character ''
+drivers/misc/aw8697_haptic/Kconfig:3:warning: ignoring unsupported character ''
+drivers/misc/aw8697_haptic/Kconfig:4:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/Kconfig:203:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/goodix_berlin_driver/Kconfig:5:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/goodix_berlin_driver/Kconfig:6:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/goodix_berlin_driver/Kconfig:7:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/goodix_berlin_driver/Kconfig:8:warning: ignoring unsupported character ''
+drivers/power/supply/mediatek/charger/Kconfig:207:warning: ignoring type redefinition of 'CHARGER_BQ25890' from 'tristate' to 'boolean'
+sound/soc/codecs/audio/dbmdx/Kconfig:10:warning: ignoring type redefinition of 'SND_SOC_DBMDX' from 'boolean' to 'tristate'
+drivers/soc/oplus/system/Kconfig:24:warning: prompt redefined
+drivers/soc/oplus/system/Kconfig:22:warning: ignoring type redefinition of 'OPPO_DEVICE_IFNO' from 'boolean' to 'tristate'
+drivers/soc/oplus/system/oplus_pmic_monitor_mtk/Kconfig:4:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_pmic_monitor_mtk/Kconfig:5:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_pmic_monitor_mtk/Kconfig:6:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_pmic_monitor_mtk/Kconfig:7:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_saupwk/Kconfig:4:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_saupwk/Kconfig:5:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_saupwk/Kconfig:6:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/oplus_saupwk/Kconfig:7:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:3:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:4:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:5:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:6:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:6:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:9:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:10:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:11:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:12:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:12:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:15:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:16:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:17:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:18:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:18:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:21:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:22:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:23:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:24:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:24:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:27:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:28:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:29:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:30:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:30:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:33:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:34:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:35:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:36:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:36:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:39:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:40:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:41:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:42:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:45:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:46:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:47:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/cmdline_parser/Kconfig:48:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/rt_info/Kconfig:1:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/rt_info/Kconfig:2:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/rt_info/Kconfig:3:warning: ignoring unsupported character ''
+drivers/soc/oplus/system/rt_info/Kconfig:4:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:1:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:2:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:3:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:4:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:5:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:6:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:1:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:2:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:3:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:4:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:5:warning: ignoring unsupported character ''
+drivers/nfc/st21nfc-i2c/Kconfig:6:warning: ignoring unsupported character ''
+drivers/input/touchscreen/mediatek/hxchipset_hx83102p/Kconfig:19:warning: choice value used outside its choice group
+drivers/input/touchscreen/mediatek/hxchipset_hx83102p/Kconfig:28:warning: choice value used outside its choice group
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HANS_FREEZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AOD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENABLE_MODEM_DB
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENGINEERTOOLS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HEALTHINFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TASK_CPUSTATS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FACERECOGNITION
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FASTBOOT_UNLOCK_VERIFY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FG_IO_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHED_ASSIST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARD_INFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPECIALOPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_UFSPLUS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIPICLKCHANGE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_FREEAREA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_KSWAPD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_NFC_CONSOFT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ONSCREENFINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_OSC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PHOENIX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AGINGTEST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PROCESS_RECLAIM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_RESET_ROLLBACK_INDEX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SELINUX_CONTROL_LOG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_ALGORITHM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_SMEM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_WISELIGHT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IOMONITOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPEAKER_MUTE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MM_FEEDBACK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TP_BSPFWUPDATE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CHG_BASIC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_VIRTUAL_RESERVE_MEMORY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MEMLEAK_DETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_MTUDETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_RUSUPGRADE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SLA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DATA_EVAL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SMART_BW
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IPV6_OPTIMIZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ZRAM_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_EXFAT_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARDFS_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_COMPATIBILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIDAS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_STABILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_INJECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_EXTENDS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_LOWMEM_DBG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PERFORMANCE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MTK_ION_SEPARATE_LOCK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ALARMINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_RPMH
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_FTM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHEDUTIL_USE_TL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CORE_CTL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CAMERA_COMMON
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_OPLUSWFD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HANS_FREEZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AOD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENABLE_MODEM_DB
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ENGINEERTOOLS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_HEALTHINFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TASK_CPUSTATS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FACERECOGNITION
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FASTBOOT_UNLOCK_VERIFY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FG_IO_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHED_ASSIST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARD_INFO
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_FINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPECIALOPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_UFSPLUS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIPICLKCHANGE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_FREEAREA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MULTI_KSWAPD
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_NFC_CONSOFT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ONSCREENFINGERPRINT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_OSC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PHOENIX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_AGINGTEST
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PROCESS_RECLAIM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_RESET_ROLLBACK_INDEX
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SELINUX_CONTROL_LOG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_ALGORITHM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_SMEM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SENSOR_WISELIGHT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IOMONITOR
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SPEAKER_MUTE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MM_FEEDBACK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_TP_BSPFWUPDATE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CHG_BASIC
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_VIRTUAL_RESERVE_MEMORY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MEMLEAK_DETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_MTUDETECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_RUSUPGRADE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SLA
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_DATA_EVAL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_SMART_BW
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_IPV6_OPTIMIZE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ZRAM_OPT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_EXFAT_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SDCARDFS_SUPPORT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_COMPATIBILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MIDAS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_STABILITY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_BUG_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_INJECT
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_ARCH_EXTENDS
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_LOWMEM_DBG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_PERFORMANCE
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_MTK_ION_SEPARATE_LOCK
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_ALARMINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_STANDBY_DEBUG
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_RPMH
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_POWERINFO_FTM
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_SCHEDUTIL_USE_TL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CORE_CTL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_STORAGE_TOOL
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_CAMERA_COMMON
+OplusKernelEnvConfig.mk:111: myfeature is OPLUS_FEATURE_WIFI_OPLUSWFD
+arch/arm64/Makefile:57: Detected assembler with broken .inst; disassembly will be unreliable
+  CHK     include/config/kernel.release
+  GEN     ./Makefile
+  UPD     include/config/kernel.release
+  CHK     include/generated/uapi/linux/version.h
+  UPD     include/generated/uapi/linux/version.h
+  Using /buildd/sources as source for kernel
+  HOSTCC  scripts/basic/fixdep
+  /buildd/sources is not clean, please run 'make mrproper'
+  in the '/buildd/sources' directory.
+make[3]: *** [/buildd/sources/Makefile:1233: prepare3] Error 1
+make[3]: *** Waiting for unfinished jobs....
+  HOSTCC  scripts/basic/bin2c
+make[3]: Leaving directory '/buildd/sources/out/KERNEL_OBJ'
+make[2]: *** [Makefile:146: sub-make] Error 2
+make[2]: Leaving directory '/buildd/sources'
+make[1]: *** [/usr/share/linux-packaging-snippets/kernel-snippet.mk:119: out/kernel-stamp.default] Error 2
+make[1]: Leaving directory '/buildd/sources'
+make: *** [debian/rules:6: build-arch] Error 2
+dpkg-buildpackage: error: debian/rules build-arch subprocess returned exit status 2

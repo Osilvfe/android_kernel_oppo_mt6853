@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+
+include /usr/share/linux-packaging-snippets/kernel-snippet.mk
+BUILD_COMMAND := $(BUILD_COMMAND) DTC_EXT=/usr/bin/dtc
+
+%:
+	dh $@ --exclude='scripts/'
+
+# 空实现：dh_dwz 什么也不做
+override_dh_dwz:
+	@true
+
+# 用 objcopy 手动压缩 *.debug 文件；跳过非 ELF
+override_dh_strip:
+	dh_strip --exclude='scripts/'
+
+	@debug_file='debian/linux-headers-4.14.186-vendor-pecm30/usr/lib/debug/.dwz/aarch64-linux-gnu/linux-headers-4.14.186-vendor-pecm30.debug'; \
+	if [ -f "$$debug_file" ]; then \
+	    if file "$$debug_file" | grep -q 'ELF'; then \
+	        echo "Compressing debug sections: $$debug_file"; \
+	        aarch64-linux-gnu-objcopy --compress-debug-sections "$$debug_file" || exit 1; \
+	    else \
+	        echo "Skipping non-ELF debug file: $$debug_file"; \
+	    fi; \
+	fi

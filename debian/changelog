@@ -1,0 +1,20 @@
+linux-android-vendor-pecm30 (0.0.0+git20250303124017.0322de2.droidian) trixie; urgency=medium
+
+  * first commit
+  * change to v4
+  * remove python2
+  * add ignored files
+  * Change to RKSU
+  * backport path_umount
+  * fix arraymap(bpf)
+  * remove useless defconfig and add a config "CONFIG_DOCKER"
+  * remove features about "CONFIG_OPLUS_SECURE_GUARD"
+  * reomove useless a file
+  * backport get_cred_rcu
+  * add new atcion file
+  * remove ksu complie
+  * fix action file
+  * remove ksu
+
+ -- Osilvfe <3072756864@qq.com>  Mon, 03 Mar 2025 20:40:17 +0800
+

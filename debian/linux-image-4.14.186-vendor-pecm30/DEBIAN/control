@@ -1,0 +1,14 @@
+Package: linux-image-4.14.186-vendor-pecm30
+Source: linux-android-vendor-pecm30
+Version: 0.0.0+git20250303124017.0322de2.droidian
+Architecture: arm64
+Maintainer: Droidian porters <info@droidian.org>
+Installed-Size: 31942
+Section: kernel
+Priority: optional
+Description: Linux kernel for Vendor Device 1
+ This package contains the Linux kernel for the Vendor Device 1 device.
+ .
+ Note: This package only ships the kernel image and modules, you should probably
+ look at the linux-bootimage-4.14.186-vendor-pecm30 package for a bootimage suitable
+ for Android boot loaders.

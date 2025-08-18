@@ -1,0 +1,11 @@
+Package: linux-bootimage-vendor-pecm30
+Source: linux-android-vendor-pecm30
+Version: 0.0.0+git20250303124017.0322de2.droidian
+Architecture: arm64
+Maintainer: Droidian porters <info@droidian.org>
+Installed-Size: 7
+Depends: linux-bootimage-4.14.186-vendor-pecm30 (= 0.0.0+git20250303124017.0322de2.droidian)
+Section: kernel
+Priority: optional
+Description: Linux kernel for Vendor Device 1 - Android Boot Image  (latest)
+ This package depends to the latest kernel bootimage available for the Vendor Device 1.

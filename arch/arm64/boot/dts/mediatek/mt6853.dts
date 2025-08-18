@@ -5933,6 +5933,8 @@ page_owner=on loop.max_part=7";
 		pu_cfg = <0x70>;
 		rsel_cfg = <0xd0>;
 		aed = <0x1a>;
+		#address-cells = <1>;
+                #size-cells = <0>;
 	};
 
 	i2c7: i2c7@11d01000 {
@@ -6263,9 +6265,9 @@ page_owner=on loop.max_part=7";
 		compatible = "mediatek,speaker_amp";
 		#sound-dai-cells = <0>;
 		/*#ifdef OPLUS_ARCH_EXTENDS*/
-		reg = <0x99>;
+		reg = <0 0x34 0x0>;
 		/*#else OPLUS_ARCH_EXTENDS*/
-		/*reg = <0x34>;*/
+		/*reg = <0 0x34 0x0>;*/
 		/*#endif OPLUS_ARCH_EXTENDS*/
 		status = "okay";
 	};
