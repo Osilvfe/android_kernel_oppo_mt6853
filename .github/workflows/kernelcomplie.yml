@@ -45,7 +45,15 @@ jobs:
         cd $GITHUB_WORKSPACE/kernel_workspace
         git clone https://github.com/osilvfe/android_kernel_oppo_mt6853 android-kernel
         cd android-kernel
-               
+        
+    - name: 更新 ksu
+      run: |
+        cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
+        mkdir KernelSU
+        rm -rf KernelSU
+        curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s main
+
+        
     - name: 设置ccache缓存
       uses: hendrikmuhs/ccache-action@v1.2
       with:
